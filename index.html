@@ -1,15 +1,60 @@
 <html>
 <h1>aandelen iron farm</h1>
+<h2>Bereken de net worth van de farm met iron uit de barrel</h2>
+<input id="aantalstacks" placeholder="aantal stacks blokken" type="text"></input>
+<input id="aantalblocks"  placeholder="aantal losse blokken" type="text"></input>
+<input id="aantalingots" placeholder="aantal losse ingots" type="text"></input>
+<input type=""text id="networth"></p>
+
+<input type="submit" onClick="calculateFunction(event)"></input>
 <p>Welkom, u kunt aandelen kopen bij de shop van tom. De prijs van 1 aandeel is momenteel 5 diamonds</p>
 <table>
+    <tr>
     <th>Waarde per aandeel</th>
     <th>Totaal aantal aandelen iron farm</th>
     <th>Kosten 1 aandeel</th>
     <th>Laatste bijwerking</th>
-
+</tr>
+<tr>
     <td>846 iron</td>
     <td>1</td>
     <td>5 diamonds</td>
     <td>12-3-2024</td>
+</tr>
 </table>
+<style>
+    body{
+        background-color: darkslategray;
+    }
+    h1, h2, p, table{
+        color: white;
+        font-family:'Courier New', Courier, monospace
+    }
+    #networth{
+        font-size: 30px;
+        color:gold;
+        background-color: transparent;
+        border: none;
+    }
+    table, td{
+        border: 1px solid gray;
+        table-layout: auto;
+    }
+    th{
+        background-color: black;
+    }
+</style>
+<script>
+        let worth = document.getElementById("networth")
+        worth.value = ""
+
+    function calculateFunction(event){
+        let stacks = document.getElementById("aantalstacks").value
+        let blocks = document.getElementById("aantalblocks").value
+        let ingots = document.getElementById("aantalingots").value
+        let netWorth = Number(ingots) + ((Number(stacks) * 64 + Number(blocks)) * 9)
+        console.log(netWorth)
+        worth.value = netWorth
+    }
+    </script>
 </html>
