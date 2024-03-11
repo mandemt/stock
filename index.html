@@ -16,8 +16,8 @@
     <th>Laatste bijwerking</th>
 </tr>
 <tr>
-    <td>846 iron</td>
-    <td>1</td>
+    <td><input type="text" id="worthaandeel"></input></td>
+    <td> <input type="text" id="aandeelamount" value="2"></input></td>
     <td>5 diamonds</td>
     <td>12-3-2024</td>
 </tr>
@@ -35,6 +35,10 @@
         color:gold;
         background-color: transparent;
         border: none;
+    }
+    #worthaandeel, #aandeelamount{
+        background-color: transparent;
+        color:white;
     }
     table, td{
         border: 1px solid gray;
@@ -55,6 +59,10 @@
         let netWorth = Number(ingots) + ((Number(stacks) * 64 + Number(blocks)) * 9)
         console.log(netWorth)
         worth.value = netWorth
+        let worthAandeel = document.getElementById("worthaandeel")
+        let aandeelamount = document.getElementById("aandeelamount")
+
+        worthAandeel.value = netWorth / aandeelamount.value
     }
     </script>
 </html>
