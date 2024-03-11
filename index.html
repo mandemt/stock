@@ -1,10 +1,13 @@
 <html>
+
+    <body onload="loadFunction()">
+        <div>
 <h1>aandelen iron farm</h1>
 <h2>Bereken de net worth van de farm met iron uit de barrel</h2>
 <input id="aantalstacks" placeholder="aantal stacks blokken" type="text"></input>
 <input id="aantalblocks"  placeholder="aantal losse blokken" type="text"></input>
 <input id="aantalingots" placeholder="aantal losse ingots" type="text"></input>
-<input type=""text id="networth"></p>
+<input type=""text id="networth" value="119"></p>
 
 <input type="submit" onClick="calculateFunction(event)"></input>
 <p>Welkom, u kunt aandelen kopen bij de shop van tom. De prijs van 1 aandeel is momenteel 5 diamonds</p>
@@ -22,9 +25,19 @@
     <td>12-3-2024</td>
 </tr>
 </table>
+<h2>laatste uitkering: 12-3-2024 00:45</h2>
+</div>
+</body>
 <style>
+    div{
+        background-color: #063d06d7;
+        width: 70%;
+        margin: 0 auto;
+    }
     body{
         background-color: darkslategray;
+        background-image: url('2024-03-12_00.51.58.png');
+        background-position: center;
     }
     h1, h2, p, table{
         color: white;
@@ -40,29 +53,41 @@
         background-color: transparent;
         color:white;
     }
+    table{
+        margin: 100px 0;
+    }
     table, td{
         border: 1px solid gray;
         table-layout: auto;
+    }
+    td, th{
+        padding: 10px;
+
     }
     th{
         background-color: black;
     }
 </style>
 <script>
-        let worth = document.getElementById("networth")
-        worth.value = ""
 
-    function calculateFunction(event){
-        let stacks = document.getElementById("aantalstacks").value
-        let blocks = document.getElementById("aantalblocks").value
-        let ingots = document.getElementById("aantalingots").value
-        let netWorth = Number(ingots) + ((Number(stacks) * 64 + Number(blocks)) * 9)
-        console.log(netWorth)
-        worth.value = netWorth
-        let worthAandeel = document.getElementById("worthaandeel")
-        let aandeelamount = document.getElementById("aandeelamount")
 
-        worthAandeel.value = netWorth / aandeelamount.value
-    }
-    </script>
+      
+    
+        function calculateFunction(event){ 
+            let worth = document.getElementById("networth")
+            worth.value = ""
+            let stacks = document.getElementById("aantalstacks").value
+            let blocks = document.getElementById("aantalblocks").value
+            let ingots = document.getElementById("aantalingots").value
+            let netWorth = Number(ingots) + ((Number(stacks) * 64 + Number(blocks)) * 9)
+            console.log(netWorth)
+            worth.value = netWorth
+            let worthAandeel = document.getElementById("worthaandeel")
+            let aandeelamount = document.getElementById("aandeelamount")
+           
+            worthAandeel.value = netWorth / aandeelamount.value
+        }
+    
+      
+        </script>
 </html>
